@@ -1,0 +1,76 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+    <div class="login-page">
+        <h1>Calcule</h1>
+        <div class="form">
+            <form class="pure-form pure-form-aligned" action="" method="GET"> 
+                <fieldset>                        
+                    <div class="pure-control-group">
+                        <div class="operador">
+                            <h1>{{operador}}</h1>
+                        </div>
+                        <div class="custon-select">                            
+                            <h1>{{n1}}</h1>                            
+                            <h1>{{n2}}</h1>
+                            <button type="submit" class="btn btn-info">
+                                Responder
+                            </button>
+                    
+                        </div>
+                    </div>
+                    <br>
+                    <input type="text" name="resp" class="form-control" placeholder="Resultado" autofocus>
+                    <!-- <h1>{{calc}}</h1> -->
+                
+                    {% if msg != '' %}
+                        <script>
+                            $(document).ready(function(){
+                                $('#my_modal').modal('show');
+                            });
+                        </script>
+                    {% endif %}
+                </fieldset>     
+            </form>
+
+        </div>
+
+    </div>
+        
+    <!-- Modal 3 -->
+    <div id="my_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- inserindo modal 27/07/2018 -->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <table class="tabelamodal">
+                        <tr><td>&nbsp;</td></tr>
+                        <tr>
+                            <td>
+                                
+                                {% if vilao %}
+                                    <h1>{{ msg }}, errou kkk é {{vilao}}</h1>
+                                    <img src="{{ MEDIA_URL }}viloes/{{viloes}}" width="250">
+                                {% else %}
+                                <h1>
+                                    {{ msg }}</h1>
+                                    <img src="{{ MEDIA_URL }}herois/{{heroi}}" width="250">
+                                {% endif %}
+                                
+                            </td>
+                        </tr>
+                        <tr><td>&nbsp;</td></tr>
+                    </table>
+                </div>
+                <div class="modal-footer" >
+                        <a autofocus href="{% url 'calc' operador=operador %}">Próximo</a>
+                      
+                        
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}
