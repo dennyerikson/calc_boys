@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load staticfiles %}
+{% load static %}
+
+{% block content %}
+<style>
+        body {
+            background: url('{% static 'img/src/fundo.png' %}');
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            background-position: center
+            
+        }
+
+    </style>
+    
+        <body >
+            <div class="login-page">
+                <div class="form">
+                    <h1>Equação: {{equacao}}</h1>
+                    <h2>Pontos: {{pontos}}</h2>
+                    <h2>Acertos: {{acertos}}</h2>
+                    <h2>Erros: {{erros}}</h2>
+                </div>
+            </div>
+        </body >
+
+{% endblock %}
