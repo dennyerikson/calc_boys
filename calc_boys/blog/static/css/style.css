@@ -107,4 +107,14 @@ footer {
 margin: 15px 0 0 3px;
 position: relative;
 }
+
+{% load static %}
+body {
+  background: url('../img/src/fundo.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center
+  
+}
     
