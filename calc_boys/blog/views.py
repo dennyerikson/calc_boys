@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from random import randint
 from blog.models import Score
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -14,6 +15,7 @@ erros=0
 
 # Create your views here.
 
+@login_required
 def home(request):
     return render(request, 'blog/home.html', {})
 

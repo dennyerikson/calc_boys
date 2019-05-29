@@ -21,6 +21,11 @@
 
 <body>
     <div class="navbar navbar-inverse navbar-static-top">
+            {% if user.is_authenticated %}
+        
+            <p class="navbar-brand js-scroll-trigger">Olá, {{ request.user.first_name}}</p>
+            {% endif %}    
+
         <div class="container">
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 <img src="https://img.icons8.com/ios/50/ffffff/menu-filled.png" width="26">
@@ -33,6 +38,7 @@
                     <li><a href="{% url 'calc' operador='-' %}">Subtrair</a></li>
                     <li><a href="{% url 'calc' operador='*' %}">Multiplicar</a></li>
                     <li><a href="#">Dividir</a></li>
+                    <li><a href="{% url 'logout' %}">Sair</a></li>
                 </ul>
 
             </div>

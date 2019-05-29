@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'blog',
     'matematica',
     'portugues',
+    'accounts',
+    'widget_tweaks',
+    'django_cleanup',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +128,11 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/static/img/img_msg/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img/img_msg/')
+
+"""altera para carregar imagens"""
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'imagens')
+
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
