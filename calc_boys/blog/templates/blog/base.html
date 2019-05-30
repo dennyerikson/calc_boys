@@ -1,5 +1,7 @@
 {% load staticfiles %}
 {% load static %}
+{% load poll_extras %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>  
@@ -21,12 +23,15 @@
 
 <body>
     <div class="navbar navbar-inverse navbar-static-top">
-            {% if user.is_authenticated %}
-        
-            <p class="navbar-brand js-scroll-trigger">Olá, {{ request.user.first_name}}</p>
-            {% endif %}    
+              
 
         <div class="container">
+                {% if user.is_authenticated %}
+                <img style="text-align: left; margin: 1%;" src="{{user.id|get_foto}}" class="img-circle" width="62" height="62"> 
+            
+                <!-- <p>Olá, {{ request.user.first_name}}</p> -->
+                <!-- <p class="navbar-brand js-scroll-trigger">Olá, {{ request.user.first_name}}</p> -->
+                {% endif %}  
             <button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
                 <img src="https://img.icons8.com/ios/50/ffffff/menu-filled.png" width="26">
             </button>

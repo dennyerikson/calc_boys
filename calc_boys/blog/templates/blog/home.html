@@ -11,19 +11,36 @@
                 
             <body >
                     <div class="container">
-                            <h1>Tarefa Online</h1>
+                            <h2>Tarefa Online</h2>
                           
                             <div class="panel-group" id="accordion">
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Lista de tarefas</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Tarefas</a>
+                                    <style>
+                                      #badge-div{
+                                        /* text-align: right; */
+                                        right: 15%;
+                                        position: absolute;
+                                      }
+                                    </style>
+                                    
+                                 
+                                      
+                                  <span id="badge-div" class="badge badge-danger">
+                                      <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
+                                    {{tarefas|length}}
+                                  </span>
+
                                   </h4>
                                 </div>
-                                <div id="collapse1" class="panel-collapse collapse in">
-                                  <div class="panel-body">
-                                  
-                                  </div>
+                                <div id="collapse1" class="panel-collapse collapse">
+                                  {% for tarefa in tarefas %}
+                                    <div class="panel-body">
+                                      <p>{{ tarefa }} <a href="#"><img src="https://img.icons8.com/ios/22/696969/task-filled.png"></a></p>
+                                    </div>
+                                  {% endfor %}
                                 </div>
                               </div>
                              
@@ -32,7 +49,12 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Lista de exercícios</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Desafios</a>
+
+                                    <span id="badge-div" class="badge badge-danger">
+                                        <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
+                                      2
+                                    </span>
                                   </h4>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
@@ -44,93 +66,29 @@
                             </div> 
                           </div>
                           
-                                    
-                                <style>
-            
-                                    .grid-container {
-                                        display: grid;
-                                        grid-gap: 20px 20px;
-                                        grid-template-columns: 96px 96px;
-                                        grid-template-rows: 96px 96px;
-                                        background-color: rgba(33, 149, 243, 0.199);
-                                        padding: 20px;
-                                        justify-content: center;
-                                        border-radius: 1rem;
-                                        margin: 0 5% 0 5%;
-                                    }
-                                    
-                                    .grid-item {
-                                        background-color: rgba(255, 255, 255, 0.8);
-                                        border: 1px solid rgba(0, 0, 0, 0.8);
-                                        padding: 5px;
-                                        font-size: 60px;
-                                        text-align: center;
-                                        color: #1E90FF;
-                                        border-radius: 5px 20px 5px;
-                                    }
 
-                                    .grid-item-mais {
-                                        background-color: #32CD32;
-                                        border: 1px solid #006400;
-                                        padding: 5px;
-                                        font-size: 60px;
-                                        text-align: center;
-                                        color: rgb(244, 245, 247);
-                                        border-radius: 5px 20px 5px;
-                                    }
-
-                                    .grid-item-mult {
-                                        background-color: #FF1493;
-                                        border: 1px solid #8B008B;
-                                        padding: 5px;
-                                        font-size: 60px;
-                                        text-align: center;
-                                        color: rgb(244, 245, 247);
-                                        border-radius: 5px 20px 5px;
-                                    }
-
-                                    .grid-item-menos {
-                                        background-color: #FFFF00;
-                                        border: 1px solid #FFA500;
-                                        padding: 5px;
-                                        font-size: 60px;
-                                        text-align: center;
-                                        color: rgb(244, 245, 247);
-                                        border-radius: 5px 20px 5px;
-                                    }
-
-                                    .grid-item-div {
-                                        background-color: #1E90FF;
-                                        border: 1px solid #00008B;
-                                        padding: 5px;
-                                        font-size: 60px;
-                                        text-align: center;
-                                        color: rgb(244, 245, 247);
-                                        border-radius: 5px 20px 5px;
-                                    }
-                                </style>
                                 
                                 
-                                <h4>Treinar</h4>
-                                    
-                                <div class="grid-container">
-                                    <div class="grid-item-mais"><a href="{% url 'calc' operador='+' %}">
-                                            <img src="https://img.icons8.com/ios/50/006400/plus-math-filled.png">
-                                    </a></div>
+                          <h4>Treinar</h4>
+                              
+                          <div class="grid-container">
+                              <div class="grid-item-mais"><a href="{% url 'calc' operador='+' %}">
+                                      <img src="https://img.icons8.com/ios/50/006400/plus-math-filled.png">
+                              </a></div>
 
-                                    <div class="grid-item-menos"><a href="{% url 'calc' operador='-' %}">
-                                            <img src="https://img.icons8.com/ios/50/FFA500/minus-math-filled.png">
-                                    </a></div>
-                                    <!-- #FF1493 -->
-                                    <div class="grid-item-mult"><a href="{% url 'calc' operador='*' %}">
-                                            <img src="https://img.icons8.com/ios/50/8B008B/multiply-filled.png">
-                                    </a></div>  
+                              <div class="grid-item-menos"><a href="{% url 'calc' operador='-' %}">
+                                      <img src="https://img.icons8.com/ios/50/FFA500/minus-math-filled.png">
+                              </a></div>
+                              <!-- #FF1493 -->
+                              <div class="grid-item-mult"><a href="{% url 'calc' operador='*' %}">
+                                      <img src="https://img.icons8.com/ios/50/8B008B/multiply-filled.png">
+                              </a></div>  
 
-                                    <div class="grid-item-div"><a href="#">
-                                            <img src="https://img.icons8.com/ios/50/00008B/divide-filled.png">
-                                    </a></div>
-                            
-                                </div>
+                              <div class="grid-item-div"><a href="#">
+                                      <img src="https://img.icons8.com/ios/50/00008B/divide-filled.png">
+                              </a></div>
+                      
+                          </div>
                             
                             
                                        

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Problema
+from .models import Tarefa
 
 # Register your models here.
-admin.site.register(Problema)
+admin.site.register(Tarefa)

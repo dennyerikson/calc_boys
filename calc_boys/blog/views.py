@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from random import randint
 from blog.models import Score
 from django.contrib.auth.decorators import login_required
+from tarefa.models import Tarefa
 
 
 
@@ -17,7 +18,11 @@ erros=0
 
 @login_required
 def home(request):
-    return render(request, 'blog/home.html', {})
+    context={}
+
+    context['tarefas'] = Tarefa.objects.filter(status=False)
+
+    return render(request, 'blog/home.html', context)
 
 #Somar
 def calc(request, operador):   
@@ -113,6 +118,12 @@ def score(request, id):
     return render(request, 'blog/score.html', context)
 
 
+def base(request):
+    context = {}
 
+    context['pessoa'] = Pessoa.objects.all()[0]
+    print(context)
+
+    return context
 
 

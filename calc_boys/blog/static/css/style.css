@@ -108,7 +108,7 @@ margin: 15px 0 0 3px;
 position: relative;
 }
 
-{% load static %}
+
 body {
   background: url('../img/src/fundo.jpg');
   background-attachment: fixed;
@@ -116,5 +116,69 @@ body {
   background-size: auto 100%;
   background-position: center
   
+}
+
+
+/* Botões calc */
+.grid-container {
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: 86px 86px;
+  grid-template-rows: 86px 86px;
+  background-color: rgba(33, 149, 243, 0.199);
+  padding: 20px;
+  justify-content: center;
+  border-radius: 1rem;
+  margin: 0 5% 0 5%;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 5px;
+  font-size: 60px;
+  text-align: center;
+  color: #1E90FF;
+  border-radius: 5px 20px 5px;
+}
+
+.grid-item-mais {
+  background-color: #32CD32;
+  border: 1px solid #006400;
+  padding: 5px;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(244, 245, 247);
+  border-radius: 5px 20px 5px;
+}
+
+.grid-item-mult {
+  background-color: #FF1493;
+  border: 1px solid #8B008B;
+  padding: 5px;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(244, 245, 247);
+  border-radius: 5px 20px 5px;
+}
+
+.grid-item-menos {
+  background-color: #FFFF00;
+  border: 1px solid #FFA500;
+  padding: 5px;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(244, 245, 247);
+  border-radius: 5px 20px 5px;
+}
+
+.grid-item-div {
+  background-color: #1E90FF;
+  border: 1px solid #00008B;
+  padding: 5px;
+  font-size: 60px;
+  text-align: center;
+  color: rgb(244, 245, 247);
+  border-radius: 5px 20px 5px;
 }
     

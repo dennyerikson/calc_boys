@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'accounts',
     'widget_tweaks',
     'django_cleanup',
+    'tarefa',
 ]
 
 MIDDLEWARE = [
@@ -125,14 +126,24 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-MEDIA_URL = '/static/img/img_msg/'
+# MEDIA_URL = '/static/img/img_msg/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img/img_msg/')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/img/img_msg/')
 
 """altera para carregar imagens"""
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'imagens')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'imagens')
 
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.template.context_processors.debug',
+    'django.template.context_processors.request',
+    'django.template.context_processors.media',
+    'django.contrib.auth.context_processors.auth',
+    'django.contrib.messages.context_processors.messages',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS += ("blog.views.base", )
