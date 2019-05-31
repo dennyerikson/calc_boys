@@ -3,6 +3,7 @@ from random import randint
 from blog.models import Score
 from django.contrib.auth.decorators import login_required
 from tarefa.models import Tarefa
+from accounts.models import Aluno
 
 
 
@@ -70,13 +71,15 @@ def calc(request, operador):
                 ultimo_numero = 0
     else:
         if pontos > 0:
+            aluno = Aluno.objects.get(pessoa__user=request.user.id)
             score = Score.objects.create(
+                aluno_id = aluno.id,
                 pontos = pontos,
                 acertos = acertos,
                 erros = erros,
                 equacao = operador
             )
-        score.save()
+            score.save()
 
         ultimo_numero = 0
         pontos = 0
@@ -126,4 +129,9 @@ def base(request):
 
     return context
 
+
+
+#score
+def score_graphs(request):
+    return render(request, 'blog/score_graphs.html')
 

@@ -11,13 +11,13 @@
                 
             <body >
                     <div class="container">
-                            <h2>Tarefa Online</h2>
+                            <h3>Tarefa Online</h3>
                           
                             <div class="panel-group" id="accordion">
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Tarefas</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Tarefas
                                     <style>
                                       #badge-div{
                                         /* text-align: right; */
@@ -32,8 +32,9 @@
                                       <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
                                     {{tarefas|length}}
                                   </span>
-
+                                </a>
                                   </h4>
+
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse">
                                   {% for tarefa in tarefas %}
@@ -49,12 +50,13 @@
                               <div class="panel panel-default">
                                 <div class="panel-heading">
                                   <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Desafios</a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Desafios
 
                                     <span id="badge-div" class="badge badge-danger">
                                         <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
                                       2
                                     </span>
+                                  </a>
                                   </h4>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
@@ -66,28 +68,31 @@
                             </div> 
                           </div>
                           
-
-                                
-                                
-                          <h4>Treinar</h4>
+                          <!-- <div class="progress">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 15%"></div>
+                            </div> -->
+                                  
+                          <div class="container_bottom">
+                              <p>Treinar</p>
                               
-                          <div class="grid-container">
-                              <div class="grid-item-mais"><a href="{% url 'calc' operador='+' %}">
-                                      <img src="https://img.icons8.com/ios/50/006400/plus-math-filled.png">
-                              </a></div>
-
-                              <div class="grid-item-menos"><a href="{% url 'calc' operador='-' %}">
-                                      <img src="https://img.icons8.com/ios/50/FFA500/minus-math-filled.png">
-                              </a></div>
-                              <!-- #FF1493 -->
-                              <div class="grid-item-mult"><a href="{% url 'calc' operador='*' %}">
-                                      <img src="https://img.icons8.com/ios/50/8B008B/multiply-filled.png">
-                              </a></div>  
-
-                              <div class="grid-item-div"><a href="#">
-                                      <img src="https://img.icons8.com/ios/50/00008B/divide-filled.png">
-                              </a></div>
-                      
+                              <div class="grid-container">
+                                <div class="grid-item-mais"><a href="{% url 'calc' operador='+' %}">
+                                        <img src="https://img.icons8.com/ios/50/006400/plus-math-filled.png">
+                                </a></div>
+    
+                                <div class="grid-item-menos"><a href="{% url 'calc' operador='-' %}">
+                                        <img src="https://img.icons8.com/ios/50/FFA500/minus-math-filled.png">
+                                </a></div>
+                                <!-- #FF1493 -->
+                                <div class="grid-item-mult"><a href="{% url 'calc' operador='*' %}">
+                                        <img src="https://img.icons8.com/ios/50/8B008B/multiply-filled.png">
+                                </a></div>  
+    
+                                <div class="grid-item-div"><a href="#">
+                                        <img src="https://img.icons8.com/ios/50/00008B/divide-filled.png">
+                                </a></div>
+                          
+                              </div>
                           </div>
                             
                             

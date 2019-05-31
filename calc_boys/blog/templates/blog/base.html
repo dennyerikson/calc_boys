@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link  rel="stylesheet" href="{% static 'css/style.css' %}">
  
 
@@ -22,10 +22,10 @@
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
               
 
-        <div class="container">
+        <div class="container" style="z-index: 1000;">
                 {% if user.is_authenticated %}
                 <img style="text-align: left; margin: 1%;" src="{{user.id|get_foto}}" class="img-circle" width="62" height="62"> 
             
@@ -37,12 +37,12 @@
             </button>
 
             <div class="collapse navbar-collapse navHeaderCollapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" >
                     <li class="active"><a href="/">Inicio</a></li>
-                    <li><a href="{% url 'calc' operador='+' %}">Somar</a></li>
-                    <li><a href="{% url 'calc' operador='-' %}">Subtrair</a></li>
-                    <li><a href="{% url 'calc' operador='*' %}">Multiplicar</a></li>
-                    <li><a href="#">Dividir</a></li>
+                    <!-- <li><a href="{% url 'calc' operador='+' %}">Somar</a></li> -->
+                    <li><a href="#">Atividade</a></li>
+                    <li><a href="#">Hanking</a></li>
+                    <li><a href="#">Perfil</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 </ul>
 
@@ -51,7 +51,9 @@
         </div>
     </div>
 
-
+        <br>
+        <br>
+        <br>
         {% block content %}
         {% endblock %}
 
@@ -62,6 +64,10 @@
     </footer>
     
 </body>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="{% static 'js/score_graphic.js' %}"></script>
 
 </html>
