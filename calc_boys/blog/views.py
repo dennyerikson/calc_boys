@@ -66,6 +66,7 @@ def calc(request, operador):
                     pontos -= 5
                     erros += 1
                     vilao = ultimo_numero
+                print(msg)
             else:
                 msg = ""
                 ultimo_numero = 0
@@ -86,14 +87,16 @@ def calc(request, operador):
         erros = 0
         acertos = 0
 
-        print('id score ',score.id)
+
         return redirect('/score/%i' % (score.id))
 
     context = {
         'operador':operador,'n1':n1, 'n2':n2 ,'calc':ultimo_numero,
         'msg':msg , 'vilao':vilao, 'viloes':viloes, 'heroi':heroi,
         'pontos':pontos}
+
     return render(request, 'blog/calc.html', context)
+
 
 def aleatorio(operador):
     n1 = randint(10,20) if operador=='-' or operador=='/' else randint(0,20)
@@ -108,6 +111,7 @@ def nao_repetir(numero, lista):
     return numero
     
 
+
 def score(request, id):
     context={}
 
@@ -119,6 +123,7 @@ def score(request, id):
     context['equacao']=score.equacao
 
     return render(request, 'blog/score.html', context)
+
 
 
 def base(request):

@@ -41,7 +41,7 @@
                     <li class="active"><a href="/">Inicio</a></li>
                     <!-- <li><a href="{% url 'calc' operador='+' %}">Somar</a></li> -->
                     <li><a href="#">Atividade</a></li>
-                    <li><a href="#">Hanking</a></li>
+                    <li><a href="/score_graphs/">Hanking</a></li>
                     <li><a href="#">Perfil</a></li>
                     <li><a href="{% url 'logout' %}">Sair</a></li>
                 </ul>
@@ -64,10 +64,5 @@
     </footer>
     
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.src.js"></script>
-<script src="https://code.highcharts.com/modules/drilldown.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="{% static 'js/score_graphic.js' %}"></script>
 
 </html>
