@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')), # direciona url vazia para o app "blog"
     path('account/', include('accounts.urls')),
+    path('desafio/', include('desafio.urls')),
 
 
     path('accounts/login/', views.LoginView.as_view(), name='login'),

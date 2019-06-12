@@ -4,6 +4,7 @@ from blog.models import Score
 from django.contrib.auth.decorators import login_required
 from tarefa.models import Tarefa
 from accounts.models import Aluno
+from desafio.models import Des
 
 
 
@@ -22,6 +23,8 @@ def home(request):
     context={}
 
     context['tarefas'] = Tarefa.objects.filter(status=False)
+
+    context['desafios'] = Des.objects.filter(aluno__pessoa__user_id=request.user)
 
     return render(request, 'blog/home.html', context)
 

@@ -52,17 +52,25 @@
                                   <h4 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Desafios
 
-                                    <span id="badge-div" class="badge badge-danger">
-                                        <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
-                                      2
-                                    </span>
+                                    {% for desafio in desafios %}
+                                      <span id="badge-div" class="badge badge-danger">
+                                          <img src="https://img.icons8.com/ios/18/FFFFFF/alarm-filled.png">
+                                          {{desafio.id}} 
+                                    
+                                      </span>
+                                    {% endfor %}
                                   </a>
                                   </h4>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse">
-                                    <div class="panel-body">
-                                  
-                                  </div>
+                                    {% for desafio in desafios %}
+                                      {% if desafio %}
+                                      <div class="panel-body">
+                                        <p>Desafio - {{desafio.id}} 
+                                          <a href="/desafio/" class="btn btn-primary"> Aceitar </a></p>
+                                       </div>
+                                      {% endif %}
+                                  {% endfor %}
                                 </div>
                               </div>
                             </div> 
